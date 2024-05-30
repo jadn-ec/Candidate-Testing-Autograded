@@ -52,11 +52,25 @@ function gradeQuiz(candidateAnswers) {
   console.log("Your answer: " + candidateAnswers[i] + ", Correct answer: " + correctAnswers[i] + "\n");
  }
 
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
+//TODO 3.2 use this variable to calculate the candidates score.
+let grades = 0;
+//input candidate answers 
+for (let i = 0; i < 5; i++){
+  if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
+  grades++; 
+  }
+}
+//compare candidate answers to correct answers 
+//create a variable to keep score 
+// added no score for incorrect answers
+// add score for correct answer4s 
+// make sure case insensitive 
 
-
+  let grade; 
+  grade = (grades/5)*100
   return grade;
 }
+
 
 function runProgram() {
   askForName();
@@ -78,5 +92,3 @@ module.exports = {
   gradeQuiz: gradeQuiz,
   runProgram: runProgram
 };
-
-
