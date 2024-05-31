@@ -47,7 +47,7 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
+ 
  for (let i = 0; i < 5; i++){
   console.log("Your answer: " + candidateAnswers[i] + ", Correct answer: " + correctAnswers[i] + "\n");
  }
@@ -68,9 +68,14 @@ for (let i = 0; i < 5; i++){
 
   let grade; 
   grade = (grades/5)*100
+  console.log("Grade:" + grade + "%");
+if (grade < 80){
+  console.log("Failed");
+} else {
+console.log("Passed");
+}
   return grade;
 }
-
 
 function runProgram() {
   askForName();
